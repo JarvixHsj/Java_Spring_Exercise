@@ -15,7 +15,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class UserServiceTest {
 
     @Autowired
-    @Qualifier("normal")
+    //会去寻找名字相同的类id或者Qualifier定义相同的名称
+//    @Qualifier("fastival")
+
+    @Qualifier("userServiceNormal")
     private UserService userService;
 
     @Test

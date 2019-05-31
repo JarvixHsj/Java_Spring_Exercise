@@ -8,12 +8,16 @@ import org.springframework.stereotype.Component;
 /**
  * Created By xiaoweiping 2019/5/31 14:59
  **/
+//不填写也会默认生成一个首写字母小写的类id，例如：userServiceFestival
 @Component
 //这个类所创建出来的对象就是首选bean
 //@Primary
 
 //使用限定符
-@Qualifier("festival")
+//@Qualifier("festival")
+
+//为当前的UserServiceFastival声明类id   不填写也会默认生成一个首写字母小写的类id，例如：userServiceFestival
+//@Component("fastival")
 public class UserServiceFestival  implements UserService {
 
     @Override

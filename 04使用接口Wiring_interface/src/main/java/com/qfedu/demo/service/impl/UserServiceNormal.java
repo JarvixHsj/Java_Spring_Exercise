@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
  * Created By xiaoweiping 2019/5/31 14:53
  **/
 @Component
-@Qualifier("normal")
+
+//@Qualifier("normal")
+//@Component("normal")
 public class UserServiceNormal implements UserService {
 
     @Override
