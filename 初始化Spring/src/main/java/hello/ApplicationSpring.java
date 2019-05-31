@@ -23,13 +23,13 @@ public class ApplicationSpring {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationSpring.class);
         //从容器中获取Component对象
         MessagePrinter printer = context.getBean(MessagePrinter.class);
-        MessageService service = context.getBean(MessageService.class);
+//        MessageService service = context.getBean(MessageService.class);
 
-        System.out.println(printer);
-        System.out.println(service);
+//        System.out.println(printer);
+//        System.out.println(service);
 
-        //设置打印机对象给server属性
-        printer.setService(service);
+        //设置打印机对象给server属性`
+//        printer.setService(service);
         printer.printMessage();
     }
 }
