@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="compactDisc1" class="com.qfedu.demo.soundsystem.CompactDisc" />
     <bean id="compactDisc2" class="com.qfedu.demo.soundsystem.CompactDisc" />
 
+    <!--arg会将compactDisc1 引用传递到CDPlayer中的有参构造函数-->
+    <bean id="cdPlayer1" class="com.qfedu.demo.soundsystem.CDPlayer">
+        <constructor-arg ref="compactDisc1" />
+    </bean>
+
+    <!--这里是使用c名称空间，在上面的xmlns有引用，
+    c：是固定参数，表示c名称空间，cd代表CDPlayer有参构造函数的参数名称，-ref表示注入另一个bean的名称，
+    也就是compactDisc1对象的引用-->
+    <bean id="cdPlayer2" class="com.qfedu.demo.soundsystem.CDPlayer" c:cd-ref="compactDisc2"></bean>
+
+    <!-- 下划线0表示第1个参数，如果与多个参数，可以另外继续写 c:_1-ref="compactDisc1" 等两种方式-->
+    <bean id="cdPlayer3" class="com.qfedu.demo.soundsystem.CDPlayer" c:_0-ref="compactDisc2"></bean>
 </beans>
